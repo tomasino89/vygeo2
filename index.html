@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>titulek</title>
+  <link rel="icon" type="image/x-icon" href="/images/favico.ico">
+  <!-- icon author: Dazzle UI -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -33,12 +35,19 @@
   });
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
-  L.tileLayer(
+  /*
+    L.tileLayer(
     'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://osm.org/copyright">\
         OpenStreetMap</a> contributors, &copy;\
         <a href="https://carto.com/attribution">CARTO</a>'
-  }).addTo(map);
+  });
+  */
+    
+    var topPlus = L.tileLayer(
+    'http://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web_grau/default/WEBMERCATOR/{z}/{y}/{x}.png', {
+      attribution: 'Map data: &copy; <a href="http://www.govdata.de/dl-de/by-2-0">dl-de/by-2-0</a>'
+      }).addTo(map);
 
   /* Display a point marker with pop-up text */
   L.marker([49.59, 17.26]).addTo(map) // EDIT marker coordinates
